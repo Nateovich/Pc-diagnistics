@@ -6,6 +6,14 @@ document.getElementById("scanBtn").addEventListener("click", function () {
     statusText.textContent = "Running scan...";
 
     setTimeout(() => {
-        statusText.textContent = "No critical issues found. PC is healthy!";
+        const resultMessage = "No critical issues found. PC is healthy!";
+        statusText.textContent = resultMessage;
+
+        // Add to history
+        const historyList = document.getElementById("history");
+        const timestamp = new Date().toLocaleString();
+        const historyItem = document.createElement("li");
+        historyItem.textContent = `${timestamp} - ${resultMessage}`;
+        historyList.appendChild(historyItem);
     }, 2000); // Simulate scan time
 });
