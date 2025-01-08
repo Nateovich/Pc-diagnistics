@@ -1,12 +1,8 @@
 document.getElementById("scanBtn").addEventListener("click", function () {
     const resultsDiv = document.getElementById("results");
     const statusText = document.getElementById("status");
-    const button = document.getElementById("scanBtn");
 
     resultsDiv.classList.remove("hidden");
-    statusText.textContent = "Running scan...";
-    
-    // Show loading spinner
     statusText.innerHTML = `<span class="spinner"></span> Running scan...`;
 
     setTimeout(() => {
